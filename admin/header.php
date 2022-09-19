@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <div class="conatiner">
+    <div class="container">
         <h1 class="alert alert-danger">
             Quản trị website
         </h1>
@@ -33,6 +33,6 @@
             <?php require 'menu.php'; ?>
         </nav>
         <?php
-        require $ViEW_NAM;
+        // require $;
         ?>
     </div>
