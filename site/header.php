@@ -1,40 +1,39 @@
+<header class="row alert-success">
+    <h1 class="alert alert-success">Siêu thị trực tuyến</h1>
+</header>
+<nav class="row">
 
-    <header class="row alert-success">
-        <h1 class="alert alert-success">Siêu thị trực tuyến</h1>
-    </header>
-    <nav>
-
-        <nav class="container-fluid navbar navbar-expand-lg navbar-light bg-dark">
-            <!-- <a class="navbar-brand" href="#">Trang chủ</a>
+    <nav class="container-fluid navbar navbar-expand-lg navbar-light bg-dark">
+        <!-- <a class="navbar-brand" href="#">Trang chủ</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button> -->
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link text-light" href="#">Trang chủ
-                            <!-- <span class="sr-only">(current)</span> -->
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Giới thiệu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Liên hệ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Góp ý</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Hỏi đáp</a>
-                    </li>
-    
-                </ul>
-            </div>
-        </nav>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="#">Trang chủ
+                        <!-- <span class="sr-only">(current)</span> -->
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Góp ý</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Hỏi đáp</a>
+                </li>
+
+            </ul>
+        </div>
     </nav>
-   
-    <!-- <nav class="row">
+</nav>
+
+<!-- <nav class="row">
             <nav class="navbar navbar-iverse">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -55,8 +54,8 @@
                             <li><a href="">Góp ý</a></li>
                             <li><a href="">Hỏi đáp</a></li>
                         </ul> -->
-    <!-- navbar - collaspe -->
-    <!-- </div>
+<!-- navbar - collaspe -->
+<!-- </div>
                 </div>
 
             </nav>

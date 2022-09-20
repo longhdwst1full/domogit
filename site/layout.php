@@ -1,3 +1,7 @@
+<?php 
+require "../global.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,8 +32,8 @@
 
 
 
-        <footer class="container-fluid mt-3 text-center h-25 bg-success text-dark">
-            <p class="py-3">Copy by Hoàng Đình Long</p>
+        <footer class="row  mt-3 d-flex justify-content-center h-25 bg-success text-dark">
+            <p class="py-3 text-center">Copy by Hoàng Đình Long</p>
         </footer>
     </div>
 </body>
