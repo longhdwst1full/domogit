@@ -62,9 +62,9 @@
         // require './home.php';
         // 
         ?>
-        <div class="row">
+        <!-- <div class="row"> -->
             <?php include $VIEW_NAME; ?>
-        </div>
+        <!-- </div> -->
 
 
     </div>
