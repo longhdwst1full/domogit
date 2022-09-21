@@ -13,12 +13,20 @@ function loai_insert($name) {
 }
 
 // delete
-function loai_delete($id) {
-    $sql = "delete from categories where id=?";
-     pdo_excute($sql,$id);
-     header("Location: ../demo/demo.php");
-}
 
+function loai_delete($id)
+{
+  $sql = "delete from categories where id=?";
+  if(is_array($id)){
+    foreach($id as $value){
+
+      pdo_excute($sql, $value);
+    }
+  }else{
+    pdo_excute($sql, $id);
+
+  }
+}
 
 // lấy thông tin 1 mã loại 
 function loai_getInfo($id) {
