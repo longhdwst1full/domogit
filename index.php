@@ -1,4 +1,4 @@
 <?php
 
 
-header("Location: site/layout.php");
+header("Location: site/trang_chinh/index.php");

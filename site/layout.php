@@ -1,5 +1,6 @@
-<?php 
-require "../global.php";
+<?php
+// require "../../dao/pdo.php";
+// require "../../dao/categories.php";
 ?>
 
 <!DOCTYPE html>
@@ -25,10 +26,34 @@ require "../global.php";
 
 <body>
     <div class="container">
-        <?php
-        require "./header.php";
-        require "./content.php";
-        ?>
+        <header class="row alert-success">
+            <h1 class="alert alert-success">Siêu thị trực tuyến</h1>
+        </header>
+        <nav class="row">
+            <?php
+            require_once "trang_chinh/menu.php";
+            ?>
+        </nav>
+        <div class="row">
+            <article class="col-sm-9">
+                <?php
+                require "trang_chinh/slider.php";
+
+                require "trang_chinh/home.php";
+                ?>
+
+            </article>
+
+
+            <aside class="col-sm-3 mt-3 border">
+
+                <?php
+                require "trang_chinh/tai_khoan.php";
+                require "trang_chinh/danh_muc.php";
+                require "trang_chinh/top10.php";
+                ?>
+            </aside>
+        </div>
 
 
 

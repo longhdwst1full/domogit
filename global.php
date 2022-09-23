@@ -5,7 +5,7 @@ $CONTENT_URL = "$ROOT_URL/content";
 $ADMIN_URL = "$ROOT_URL/admin";
 $SITE_URL = "$ROOT_URL/site";
 $SL_PER_PAGE = 10;
-$UPLOAD_URL ="../../upload/";
+$UPLOAD_URL = "../../upload/";
 
 // định nghĩa đường dẫn chứa ảnh sửa dụng trong upload
 $IMAGE_DIR = $_SERVER["DOCUMENT_ROOT"] . "$ROOT_URL/content/images";
@@ -26,7 +26,7 @@ $MESSAGE = "";
 
 function save_file($filename, $target_dir)
 {
-    $file_upload = $_FILES["filename"];
+    $file_upload = $_FILES[$filename];
     $file_name = basename($file_upload['name']);
     $target_path = $target_dir . $file_name;
     move_uploaded_file($file_upload['tmp_name'], $target_path);
