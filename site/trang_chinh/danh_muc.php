@@ -4,10 +4,9 @@
     <div class="list-group">
         <?php
 
-        require "../../dao/pdo.php";
+        require_once "../../dao/pdo.php";
+        require_once "../../dao/categories.php";
 
-        pdo_get_connection();
-        require "../../dao/categories.php";
         $data = loai_selecAll();
         // var_dump($data);
         // die;
