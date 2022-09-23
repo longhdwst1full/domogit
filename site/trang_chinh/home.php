@@ -1,3 +1,7 @@
+<?php
+require "slider.php";
+
+?>
 <div class="row pt-20">
     <div class="col-sm-6 col-md-4 border mr-3">
         <div class="thumbnail text-center">

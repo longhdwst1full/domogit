@@ -36,10 +36,8 @@
         </nav>
         <div class="row">
             <article class="col-sm-9">
-                <?php
-                require "trang_chinh/slider.php";
-
-                require "trang_chinh/home.php";
+                <?php    
+                require $VIEW_NAME;
                 ?>
 
             </article>
