@@ -17,6 +17,9 @@
                         <a class="nav-link text-light" href="<?=$ADMIN_URL?>/commodities/index.php">Hàng hóa</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-light" href="<?=$ADMIN_URL?>/commodities/index.php">Sản phẩm</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-light" href="<?=$ADMIN_URL?>/customer/index.php">Khách hàng</a>
                     </li>
                     <li class="nav-item">

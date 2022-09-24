@@ -2,7 +2,8 @@
 require_once 'pdo.php';
 function binh_luan_insert($content, $commodity_id, $customer_id, $date_comment)
 {
-    $sql = "INSERT INTO comments(content, commodity_id,customer_id,date_comment) values(?,?,?,?) ";
+    $sql = "INSERT INTO comments(content, commodity_id,customer_id,date_comment) 
+    values(?,?,?,?) ";
     pdo_excute($sql, $content, $commodity_id, $customer_id, $date_comment);
 }
 function binh_luan_update($id, $content, $commodity_id, $customer_id, $date_comment)
@@ -38,9 +39,9 @@ function binh_luan_exist($id)
     $sql = "select count(*) from comments where id=?";
     return pdo_query_value($sql, $id) > 0;
 }
-function binh_luan_select_by_hang_hoa($id_customer)
+function binh_luan_select_by_hang_hoa($commodity_id)
 {
     $sql = "select b.*,h.name from comments b join commodities h on h.id=b.commodity_id
     where b.commodity_id=? order by date_comment DESC";
-    return pdo_query($sql, $id_customer);
+    return pdo_query($sql, $commodity_id);
 }

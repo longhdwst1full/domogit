@@ -1,21 +1,25 @@
 <?php
 
 require "../../global.php";
+
+
 extract($_REQUEST);
 
 
-if (exist_params("gioi_thieu")) {
+if (exist_params("gioi_thieu",$_REQUEST)) {
     $VIEW_NAME = "gioi-thieu.php";
-} else if (exist_params("lien_he")) {
+} else if (exist_params("lien_he",$_REQUEST)) {
     $VIEW_NAME = "lien-he.php";
-} else if (exist_params("gop_y")) {
+} else if (exist_params("gop_y",$_REQUEST)) {
     $VIEW_NAME = "gop-y.php";
-} else if (exist_params("hoi_dap")) {
+} else if (exist_params("hoi_dap",$_REQUEST)) {
     $VIEW_NAME = "hoi-dap.php";
 } else {
-    require '../../dao/commodities.php';
-    $dac_biet_list = commodities_select_dac_biet();
-    $items_all = commodities_select_all_home();
+    // require '../../dao/commodities.php';
+    // $dac_biet_list = commodities_select_dac_biet();
+    // $items_all = commodities_select_all_home();
     $VIEW_NAME = "home.php";
 }
+
+
 require "../layout.php";

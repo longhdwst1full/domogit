@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $ROOT_URL = "/xshop";
 $CONTENT_URL = "$ROOT_URL/content";
 $ADMIN_URL = "$ROOT_URL/admin";
@@ -79,5 +79,5 @@ function check_login()
         }
     }
     $_SESSION['request_uri'] = $_SERVER['REQUEST_URI'];
-    header("Location: $SITE_URL/tai-khoan/dang-nhap.php");
+    header("Location: $SITE_URL/tai_khoan/dang-nhap.php");
 }
