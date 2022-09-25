@@ -1,5 +1,5 @@
 <div class="thumbnail">
-    <img src='<?= $CONTENT_URL ?>/images/products/<?= $image ?>' style='max-width:95%'>
+    <img src='<?= $CONTENT_URL ?>/images/products/<?= $image ?>' style='max-width:95%;height:100px;' >
     <div class="caption">
         <p>
         <ul>

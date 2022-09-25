@@ -14,15 +14,15 @@ if (isset($_SESSION['user'])) {
 }
 // die;
 ?>
-<form action="cap-nhat-tk.php" method="post"  enctype="multipart/form-data">
+<form action="cap-nhat-tk.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
-<div class="form-group">
-    <img style="width: 200px; height: 200px"src="<?= $CONTENT_URL ?>/images/users/<?= $avatar ?>">
+        <div class="form-group">
+            <img style="width: 200px; height: 200px" src="<?= $CONTENT_URL ?>/images/users/<?= $avatar ?>">
 
-</div>
-<div class="form-group">
+        </div>
+        <div class="form-group">
 
-</div>
+        </div>
         <input name="image_old" class="form-control" type="hidden" value="<?= $avatar ?>">
     </div>
     <div class="form-group">
@@ -36,8 +36,8 @@ if (isset($_SESSION['user'])) {
     </div>
     <div class="form-group">
         <label for="">Thay ảnh mới tại đây</label>
-        <input  class="form-control" type="file" value="" name="image_new" id="image_new" >
-        
+        <input class="form-control" type="file" name="image_new" id="image_new">
+
         <input type="file" name="fileToUpload" id="fileToUpload">
     </div>
     <div class="form-group">
