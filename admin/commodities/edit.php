@@ -56,7 +56,7 @@
         </div>
         <div class="form-group col-sm-4">
             <label for="">Ngày thêm hàng</label>
-            <input type="date_add" name="date_add" class="form-control datepicker" value="<?= $date_add ?>">
+            <input type="date" name="date_add" class="form-control datepicker" value="<?= $date_add ?>">
         </div>
         <div class="form-group col-sm-4">
             <label for="">Số lượng xem</label>
