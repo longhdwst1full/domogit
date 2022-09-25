@@ -6,6 +6,14 @@ function customer_selecAll()
   $sql = "sELECT * FROM customer";
   return pdo_query($sql);
 }
+function customer_check_email($email){
+  $sql = "select * from customer where email = ?";
+  return pdo_query_one($sql,$email);
+}
+{
+  $sql = "sELECT * FROM customer";
+  return pdo_query($sql);
+}
 
 
 // thêm
@@ -43,13 +51,22 @@ function customer_getInfo($id)
 function customer_update($id, $password, $name, $kich_hoat, $avatar, $email, $vai_tro)
 {
   $sql = "update customer set password=?, name=?, kich_hoat=?, avatar=?, email=?, vai_tro=? where id=?";
-  return  pdo_excute($sql, $password, $name, $kich_hoat==1, $avatar, $email, $vai_tro==1, $id);
+  return  pdo_excute($sql, $password, $name, $kich_hoat, $avatar, $email, $vai_tro, $id);
+}
+function customer_update_optimize($id,  $name,  $hinh)
+{
+  $sql = "update customer set name=?, avatar=?  where id=?";
+  return  pdo_excute($sql, $id,  $name,  $hinh);
 }
 
 
 function customer_select_by_id($id){
   $sql="select * from customer where id=?";
   return pdo_query_one($sql, $id);
+}
+function customer_select_by_email($email){
+  $sql="select * from customer where email=?";
+  return pdo_query_one($sql, $email);
 }
 
 function customer_exist($id){
@@ -63,6 +80,7 @@ function customer_select_by_role($vai_tro){
   return pdo_query($sql, $vai_tro)>0;
 }
 
-function customer_change_password() {
-  
+function customer_change_password($id, $password) {
+  $sql="update customer set password=? where id=?";
+  return pdo_query($sql, $password,$id);
 }

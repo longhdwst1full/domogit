@@ -4,8 +4,8 @@ require 'dang-nhap-info.php';
 }
 else{
 $email = get_cookie("email");
-echo $email;
+// echo $email;
 // die;
 $password = get_cookie("password");
-require '../tai_khoan/dang-nhap-form.php';
+require 'dang-nhap-form.php';
 }
