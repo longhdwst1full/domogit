@@ -27,8 +27,8 @@
                 <button name="btn_login" type="submit" class="btn btn-default ">Đăng nhập</button>
             </div>
             <div class="form-group">
-                <li><a href="<?= $SITE_URL ?>/tai_khoan/quen-mk-form.php">Quên mật khẩu</a></li>
-                <li><a href="<?= $SITE_URL ?>/tai_khoan/dang-ki-form.php">Đăng kí thành viên</a></li>
+                <li><a href="<?= $SITE_URL ?>/tai_khoan/index.php?quen-mk">Quên mật khẩu</a></li>
+                <li><a href="<?= $SITE_URL ?>/tai_khoan/index.php?btn_register_new">Đăng kí thành viên</a></li>
             </div>
         </form>
     </div>

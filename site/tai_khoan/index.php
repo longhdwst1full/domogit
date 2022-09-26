@@ -1,19 +1,19 @@
 <style>
-
     img {
         width: 100px !important;
         height: 100px !important;
         object-fit: cover;
     }
-    </style>
+</style>
 <?php
 
-require "../../global.php";
+require_once "../../global.php";
 require "../../dao/customer.php";
 
 
 extract($_REQUEST);
-
+// var_dump($_REQUEST);
+// die;
 if (isset($_SESSION['user'])) {
 
 
@@ -22,16 +22,23 @@ if (isset($_SESSION['user'])) {
     } else if (exist_params("doi-mk", $_REQUEST)) {
         $VIEW_NAME = "doi-mk-form.php";
     } else if (exist_params("btn_logoff", $_REQUEST)) {
-        
-        session_unset();
+
         $VIEW_NAME = "$SITE_URL/trang_chinh/home.php";
         require "../layout.php";
+        session_unset();
     } else {
 
         $VIEW_NAME = "home.php";
     }
 } else {
-    $VIEW_NAME = "$SITE_URL/trang_chinh/home.php";
+    if (exist_params("btn_register_new")) {
+        $VIEW_NAME = "dang-ki-form.php";
+    } else if (exist_params("quen-mk")) {
+        $VIEW_NAME = "quen-mk-form.php";
+    } else {
+
+        $VIEW_NAME = "$SITE_URL/trang_chinh/home.php";
+    }
 }
 
 require "../layout.php";
