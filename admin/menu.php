@@ -26,6 +26,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-light" href="<?=$ADMIN_URL?>/thong_ke/index.php">Thống kê</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="<?=$SITE_URL?>/trang_chinh/index.php">Xem trang web</a>
+                    </li>
 
                 </ul>
             </div>

@@ -46,7 +46,7 @@ function commodities_tang_so_luot_xem($id)
 }
 function commodities_select_top10()
 {
-    $sql = "select * from commodities where view >0 order by view desc limit 0 10";
+    $sql = "select * from commodities where view >0 order by view desc limit 0, 10";
     return pdo_query($sql);
 }
 function commodities_select_dac_biet()

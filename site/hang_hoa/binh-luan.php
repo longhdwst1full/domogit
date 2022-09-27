@@ -11,11 +11,19 @@ if (exist_params("noi_dung")) {
 }
 // list bình lua
 $comment_list = binh_luan_select_by_hang_hoa($id);
+
 foreach ($comment_list as $bl) { ?>
     <ul>
         <li class="">
           <p>  <i><b>
-                <?= $bl['customer_id'] = $_SESSION['user']['id'] ? $_SESSION['user']['name'] : "" ?>
+        
+                <?php 
+                if(isset($_SESSION['user'])){
+
+                    $bl['customer_id'] = $_SESSION['user']['id'] ? $_SESSION['user']['name'] : "";
+                    
+                }?>
+                
             </b></i>
             </p>
             
@@ -28,7 +36,7 @@ foreach ($comment_list as $bl) { ?>
    
 <?php }
 if (!isset($_SESSION['user'])) {
-    echo '<b>Đăng nhập để bình luận về sản phẩm này</b>';
+    echo '<h3 class="m-5">Đăng nhập để bình luận về sản phẩm này</h3>';
 } else {
 ?>
     <form class="d-flex w-90"  action="<?= $_SERVER["REQUEST_URI"] ?>" method="post">
