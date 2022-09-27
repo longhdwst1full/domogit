@@ -14,15 +14,23 @@ if (exist_params("gioi_thieu", $_REQUEST)) {
     $VIEW_NAME = "gop-y.php";
 } else if (exist_params("hoi_dap", $_REQUEST)) {
     $VIEW_NAME = "hoi-dap.php";
-} else if (exist_params("btn_logoff", $_REQUEST)) {
+} else if (exist_params("view_cart", $_REQUEST)) {
+    $VIEW_NAME = "detail_cart.php";
+
+
+} else if (exist_params("id","type",$_REQUEST)) {
+    $VIEW_NAME = "update_quantity_in_cart.php";
+
+} 
+else if (exist_params("btn_logoff", $_REQUEST)) {
 
     session_unset();
     $VIEW_NAME = "home.php";
 } else {
     $VIEW_NAME = "home.php";
-    require '../../dao/commodities.php';
-    $dac_biet_list = commodities_select_dac_biet();
-    $items_all = commodities_select_all_home();
+    // require '../../dao/commodities.php';
+    // $dac_biet_list = commodities_select_dac_biet();
+    // $items_all = commodities_select_all_home();
 }
 
 

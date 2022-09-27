@@ -1,9 +1,9 @@
 <?php
 require "slider.php";
-// require_once "../../global.php";
-// require_once '../../dao/commodities.php';
-// $dac_biet_list = commodities_select_dac_biet();
-// $items_all = commodities_select_all_home();
+require_once "../../global.php";
+require_once '../../dao/commodities.php';
+$dac_biet_list = commodities_select_dac_biet();
+$items_all = commodities_select_all_home();
 // var_dump($items_all);
 // echo "<br>";
 // var_dump($dac_biet_list);
@@ -38,7 +38,7 @@ require "slider.php";
 
                         <p class="card-text mb-4">Đơn giá : <?= number_format($price, 2) ?>đ</p>
                     </div>
-                    <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                    <a href="add_to_cart.php?product_id=<?=$id?>" class="btn btn-primary">Thêm vào giỏ hàng</a>
                 </div>
             </div>
     <?php endforeach;

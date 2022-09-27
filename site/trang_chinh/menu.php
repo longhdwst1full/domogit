@@ -23,7 +23,7 @@
                 <a class="nav-link text-light" href="<?= $SITE_URL ?>/trang_chinh/index.php?hoi_dap">Hỏi đáp</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" href="<?= $SITE_URL ?>/trang_chinh/index.php?cart">Giỏ hàng</a>
+                <a class="nav-link text-light" href="<?= $SITE_URL ?>/trang_chinh/index.php?view_cart">Giỏ hàng</a>
             </li>
 
 
