@@ -27,7 +27,7 @@
         </div>
         <br>
         <li>
-            <a href="<?= $SITE_URL ?>/tai_khoan/dang-nhap.php?btn_logoff">
+            <a href="<?= $SITE_URL ?>/trang_chinh/index.php?btn_logoff">
                 Đăng xuất
             </a>
         </li>

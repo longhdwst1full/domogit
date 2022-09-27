@@ -21,21 +21,17 @@ if (isset($_SESSION['user'])) {
         $VIEW_NAME = "cap-nhat-tk-form.php";
     } else if (exist_params("doi-mk", $_REQUEST)) {
         $VIEW_NAME = "doi-mk-form.php";
-    } else if (exist_params("btn_logoff", $_REQUEST)) {
+    }  else {
 
         $VIEW_NAME = "$SITE_URL/trang_chinh/home.php";
-        require "../layout.php";
-        session_unset();
-    } else {
-
-        $VIEW_NAME = "home.php";
     }
 } else {
     if (exist_params("btn_register_new")) {
         $VIEW_NAME = "dang-ki-form.php";
     } else if (exist_params("quen-mk")) {
         $VIEW_NAME = "quen-mk-form.php";
-    } else {
+    } 
+     else {
 
         $VIEW_NAME = "$SITE_URL/trang_chinh/home.php";
     }
