@@ -50,7 +50,7 @@
                     <td colspan="6">
                         <button id="check-all" type="button" class="btn btn-default">Chọn tất cả</button>
                         <button id="clear-all" type="button" class="btn btn-default">Bỏ chọn tất cả</button>
-                        <button id="btn_delete" name="btn_delete" class="btn btn-default">Xáo các mục chọn</button>
+                        <button id="btn_delete" name="btn_delete" class="btn btn-default">Xóa các mục chọn</button>
                     </td>
                 </tr>
             </tfoot>

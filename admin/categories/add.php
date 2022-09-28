@@ -10,7 +10,7 @@
                 <input type="text" class="form-control" name="name" >
             </div>
             <div class="row mb10">
-                <input type="submit" name="themmoi" value="Thêm mới">
+                <input type="submit" name="btn_insert" value="Thêm mới">
                 <input type="reset" value="Nhập lại">
                 <a href="index.php?btn_list">
                     <input type="button" value="Danh sách">

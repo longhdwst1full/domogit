@@ -37,9 +37,9 @@
                         Chọn tất cả
                     </button>
                     <button id="clear-all" class="btn btn-default">
-                        Xóa tất cả
+                        Bỏ chọn tất cả
                     </button>
-                    <button id="delete-all" class="btn btn-default">
+                    <button id="delete-all" class="btn btn-default" name="btn_delete">
                         Xóa các mục đã chọn
                     </button>
 

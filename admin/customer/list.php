@@ -43,7 +43,7 @@
                     <button id="clear-all" class="btn btn-default">
                         Xóa tất cả
                     </button>
-                    <button id="delete-all" class="btn btn-default">
+                    <button id="delete-all" class="btn btn-default" name="btn_delete">
                         Xóa các mục đã chọn
                     </button>
                     <button id="" class="btn btn-default">
