@@ -22,7 +22,7 @@
             </a>
         </li>
         <li><a href="<?= $SITE_URL ?>/tai_khoan/doi-mk.php">Đổi mật khẩu</a></li>
-        <li><a href="<?= $SITE_URL ?>/tai_khoan/cap-nhat-tk.php">Cập nhật tài khoản</a></li>
+        <li><a href="<?= $SITE_URL ?>/tai_khoan/cap_nhat_tk.php">Cập nhật tài khoản</a></li>
         <?php
         if ($_SESSION['user']['vai_tro'] == TRUE) {
             echo "<li><a href='$ADMIN_URL/trang-chinh'>Quản trị website</a></li>";
