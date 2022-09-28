@@ -25,7 +25,7 @@
             <label for="">Hình ảnh</label>
             <div>
 
-                <img style="width:100px;" src="../../upload/<?= $image ?>">
+                <img style="width:100px;" src="<?=$CONTENT_URL?>/images/products/<?= $image ?>">
             </div>
             <input type="hidden" name="image" value="<?= $image ?>">
             <label for="">Đổi ảnh mới tại đây</label>

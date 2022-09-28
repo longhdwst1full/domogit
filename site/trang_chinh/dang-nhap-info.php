@@ -10,7 +10,7 @@
     <div class="panel-heading">TÀI KHOẢN</div>
     <div class="panel-body">
         <div class="text-center">
-            <img src='<?= $CONTENT_URL ?>/images/users/<?= $_SESSION['user']['avatar'] ?>'>
+            <img src="<?= $CONTENT_URL ?>/images/users/<?= $_SESSION['user']['avatar'] ?>">
             <br>
             <?= $_SESSION['user']['name'] ?>
         </div>

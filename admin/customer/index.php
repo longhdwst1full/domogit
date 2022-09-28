@@ -12,11 +12,12 @@ if (exist_params("btn_list")) {
     $password = $_POST["password"];
     $name = $_POST["name"];
     $kich_hoat = $_POST["kich_hoat"];
-    $avatar = $_FILES["avatar"];
+    // $avatar = $_FILES["avatar"];
     $email = $_POST["email"];
     $vai_tro = $_POST["vai_tro"];
-    $forder_img = "../../content/images/" . uniqid() . '-' . $avatar['name'];
-    move_uploaded_file($avatar['tmp_name'], $forder_img);
+   
+    $file_name = save_file("avatar", "$IMAGE_DIR/users/");
+    $forder_img = $file_name ? $file_name : "user.png";
     // insert db
     customer_insert($password, $name, $kich_hoat, $forder_img, $email, $vai_tro);
     // show dữ liệu
@@ -51,7 +52,7 @@ if (exist_params("btn_list")) {
     $kich_hoat = $_POST["kich_hoat"];
     $avatar = $_FILES["avatar_new"];
     if ($avatar['size'] > 0) {
-        $forder_img = "../../content/images/" . uniqid() . '-' . $avatar['name'];
+        $forder_img = "$CONTENT_URL/images/products/" . uniqid() . '-' . $avatar['name'];
         move_uploaded_file($avatar['tmp_name'], $forder_img);
     } else {
         $forder_img = $_POST['avatar_old'];

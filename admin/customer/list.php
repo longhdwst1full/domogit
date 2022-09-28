@@ -25,7 +25,7 @@
                     <td><?= $id ?></td>
                     <td><?= $name ?></td>
                     <td><?= $email ?></td>
-                    <td><img src="<?= $avatar ?>" style="width: 100px;" alt=""></td>
+                    <td><img src="<?=$CONTENT_URL?>/images/users/<?= $avatar ?>" style="width: 100px;" alt=""></td>
                     <td><?= ($vai_tro == 1) ? "Nhân viên " : "Khách hàng" ?></td>
                     <td>
                         <a href="index.php?btn_edit&id=<?= $id ?>" class="">Sửa</a>

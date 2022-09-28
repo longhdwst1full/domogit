@@ -34,7 +34,7 @@
 
                     <td><?= $id ?></td>
                     <td><?= $name ?></td>
-                    <td><img style="width:100px;" src="../../upload/<?= $image ?>" alt=""></td>
+                    <td><img style="width:100px;" src="<?=$CONTENT_URL?>/images/products/<?= $image ?>" alt=""></td>
 
                     <td>$<?= number_format($price, 2) ?></td>
                     <td><?= number_format($sell*100) ?>%</td>

@@ -19,7 +19,7 @@ if (exist_params("btn_list")) {
     $category_id = $_POST["category_id"];
     $date_add = $_POST["date_add"];
     $special = $_POST["special"];
-    $forder_img = save_file("image",$UPLOAD_URL);
+    $forder_img = save_file("image","$IMAGE_DIR/products");
     // insert db
     commodities_insert($name, $price, $sell, $forder_img, $date_add, $description, $special, $view, $category_id);
     // show dữ liệu
@@ -60,7 +60,7 @@ if (exist_params("btn_list")) {
     
     $image_new = $_FILES["image_new"];
     if ($image_new['size'] > 0) {
-        $forder_img = save_file("image_new",$UPLOAD_URL);
+        $forder_img = save_file("image_new","$IMAGE_DIR/products");
     } else {
         $forder_img = $_POST['image'];
     }

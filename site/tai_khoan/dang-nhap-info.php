@@ -16,10 +16,9 @@
         <div class="text-center" style="width: 200px;">
         <div>
 
-            <img style="width:200px; height:180px;" src='<?= $CONTENT_URL ?>/images/users/<?= $_SESSION['user']['avatar'] ?>'>
+            <img style="width:200px; height:180px;" src="<?=$CONTENT_URL?>/images/users/<?= $_SESSION['user']['avatar'] ?>">
         </div>
             <br>
-            
             <div class="text-center">
     
                 <?= $_SESSION['user']['name'] ?>

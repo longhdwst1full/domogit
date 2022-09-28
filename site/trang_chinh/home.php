@@ -28,7 +28,7 @@ $items_all = commodities_select_all_home();
         foreach ($items_all as $value) : extract($value); ?>
 
             <div class=" col-sm-6 col-md-4 mb-3 card" style="width: 18rem;">
-                <a href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>"> <img class="card-img-top" src="../../upload/<?= $image ?>" alt="Card image cap"></a>
+                <a href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>"> <img class="card-img-top" src="<?=$CONTENT_URL?>/images/products/<?= $image ?>" alt="Card image cap"></a>
                 <div class="card-body">
                     <a href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>">
                         <h5 class="card-title text-center"><?= $name ?></h5>
