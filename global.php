@@ -27,8 +27,8 @@ $MESSAGE = "";
 function save_file($filename, $target_dir)
 {
     $file_upload = $_FILES[$filename];
-    $file_name = basename($file_upload['name']);
-    $target_path = $target_dir . $file_name;
+    $file_name =uniqid() . basename($file_upload['name']);
+    $target_path = $target_dir .  $file_name;
     move_uploaded_file($file_upload['tmp_name'], $target_path);
     return $file_name;
 }

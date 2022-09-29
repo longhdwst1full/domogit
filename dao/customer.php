@@ -61,7 +61,7 @@ function customer_update($id, $password, $name, $kich_hoat, $avatar, $email, $va
 function customer_update_optimize($id,  $name,  $hinh)
 {
   $sql = "update customer set name=?, avatar=?  where id=?";
-  return  pdo_excute($sql, $id,  $name,  $hinh);
+  return  pdo_excute($sql,  $name,  $hinh, $id);
 }
 
 

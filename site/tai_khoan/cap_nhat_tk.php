@@ -1,28 +1,35 @@
 <?php
 require '../../global.php';
 require '../../dao/customer.php';
-var_dump($_POST);
-// echo $_FILES['avatar'];
-extract($_REQUEST);
-// var_dump($_REQUEST);
-// var_dump($_POST['image_old']);
-// die;
-if (exist_params("btn_update")) {
-    $file_name = save_file("image_new", "$IMAGE_DIR/users/");
-    $hinh = $file_name ? $file_name : $image_old;
-    try {
-        if (customer_check_email_exits($email)) {
-            $MESSAGE = "Email  này đã được sử dụng!";
-            $VIEW_NAME = "cap_nhat_tk_form.php";
-        } else {
-            customer_update_optimize($id,  $name,  $hinh);
-            $MESSAGE = "Cập nhật thông tin thành viên thành công!";
-            $_SESSION['user'] = customer_select_by_id($id);
-            $VIEW_NAME = "$SITE_URL/trang_chinh/home.php";
-        }
-    } catch (Exception $exc) {
-        $MESSAGE = "Cập nhật thông tin thành viên thất bại!";
+
+// extract($_REQUEST);
+
+if (exist_params("update_tk_customer")) {
+    $id = $_POST['id'];
+
+    $name = $_POST["name"];
+    $file_upload = $_FILES['image_new'];
+
+    if ($file_upload['size'] > 0) {
+      
+        $file_name = uniqid(). basename($file_upload['name']);
+
+        $target_path = "$IMAGE_DIR/users/". $file_name;
+        move_uploaded_file($file_upload['tmp_name'],$target_path);
+        // var_dump($path_file);
+        // var_dump($upimg);
+        // die;
+    } else {
+        $file_name = $_POST['image_old'];
     }
+
+   
+
+        customer_update_optimize($id,  $name,  $file_name);
+        $MESSAGE = "Cập nhật thông tin thành viên thành công!";
+        $_SESSION['user'] = customer_select_by_id($id);
+        $VIEW_NAME = "$SITE_URL/trang_chinh/home.php";
+   
 } else {
     extract($_SESSION['user']);
 }

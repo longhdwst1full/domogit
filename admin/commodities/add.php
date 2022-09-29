@@ -4,7 +4,7 @@
     <div class="row">
         <div class="form-group col-sm-4">
             <label for="">Mã hàng hóa</label>
-            <input type="text" name="id" class="form-control" readonly value="" placeholder="">
+            <input type="text" name="id" class="form-control" readonly value="AUTO number" placeholder="">
         </div>
         <div class="form-group col-sm-4">
             <label for="">Tên hàng hóa</label>

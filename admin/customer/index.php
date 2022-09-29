@@ -15,7 +15,7 @@ if (exist_params("btn_list")) {
     // $avatar = $_FILES["avatar"];
     $email = $_POST["email"];
     $vai_tro = $_POST["vai_tro"];
-   
+
     $file_name = save_file("avatar", "$IMAGE_DIR/users/");
     $forder_img = $file_name ? $file_name : "user.png";
     // insert db
@@ -29,15 +29,14 @@ if (exist_params("btn_list")) {
     $customer_info = customer_select_by_id($id);
     extract($customer_info);
 
-   
+
     // show dữ liệu
     $items = customer_selecAll();
     $VIEW_NAME = "edit.php";
-}
- else if (exist_params("btn_delete")) {
+} else if (exist_params("btn_delete")) {
     // lấy dữ liệu từ form
     $id = $_REQUEST['id'];
-   
+
     customer_delete($id);
 
 
@@ -50,16 +49,19 @@ if (exist_params("btn_list")) {
     $password = $_POST["password"];
     $name = $_POST["name"];
     $kich_hoat = $_POST["kich_hoat"];
-    $avatar = $_FILES["avatar_new"];
-    if ($avatar['size'] > 0) {
-        $forder_img = "$CONTENT_URL/images/products/" . uniqid() . '-' . $avatar['name'];
-        move_uploaded_file($avatar['tmp_name'], $forder_img);
+    $file_upload = $_FILES["avatar_new"];
+    if ($file_upload['size'] > 0) {
+        $file_name =uniqid()  . basename($file_upload['name']);
+        $target_path = "$IMAGE_DIR/users/" .  $file_name;
+       
+        move_uploaded_file($file_upload['tmp_name'], $target_path);
+       
     } else {
-        $forder_img = $_POST['avatar_old'];
+        $file_name = $_POST['avatar_old'];
     }
     $email = $_POST["email"];
     $vai_tro = $_POST["vai_tro"];
-    customer_update($id, $password, $name, $kich_hoat, $forder_img, $email, $vai_tro);
+    customer_update($id, $password, $name, $kich_hoat, $file_name, $email, $vai_tro);
 
 
     // show dữ liệu

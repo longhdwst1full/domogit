@@ -1,4 +1,4 @@
-e<?php
+<?php
 if (isset($MESSAGE)) {
 
 
@@ -6,19 +6,19 @@ if (isset($MESSAGE)) {
         echo "<h5>$MESSAGE</h5>";
     }
 }
-
+extract($_SESSION['user']);
 ?>
-<form action="index.php" method="POST" enctype="multipart/form-data">
+<form action="cap_nhat_tk.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
         <div class="form-group">
             <img style="width: 200px; height: 200px" src="<?= $CONTENT_URL ?>/images/users/<?= $avatar ?>">
 
         </div>
-        <div class="form-group">
+        <div class="form-group"> 
 
         </div>
         <input name="image_old" class="form-control" type="hidden" value="<?= $avatar ?>">
-        <input name="image_new11" class="form-control" type="file" value="">
+       
     </div>
     <div class="form-group">
         <label for="">Email</label>

@@ -28,7 +28,7 @@
 
             <input type="file" name="avatar_new" class="form-control">
             <div style="width:100px">
-                <img src="<?= $avatar ?>" width="100">
+                <img src="<?=$CONTENT_URL?>/images/users/<?= $avatar ?>" width="100" height="100" alt="">
             </div>
         </div>
     </div>

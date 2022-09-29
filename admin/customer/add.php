@@ -42,7 +42,7 @@
         <div class="form-group col-sm-12">
             <button name="btn_insert" class="btn btn-default">Thêm mới</button>
             <button type="reset" class="btn btn-default">Nhập lại</button>
-            <button class="btn btn-default"><a href="index.php?btn_list" >Danh sách</a></button>
+            <a href="index.php?btn_list" > <button class="btn btn-default" name="">Danh sách</button></a>
             
         </div>
     </div>
