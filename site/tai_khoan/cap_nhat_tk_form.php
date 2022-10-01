@@ -1,4 +1,5 @@
 <?php
+require '../../check_user_admin.php';
 if (isset($MESSAGE)) {
 
 

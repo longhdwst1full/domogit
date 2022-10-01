@@ -14,14 +14,14 @@ $items_all = commodities_select_all_home();
 
         foreach ($items_all as $value) : extract($value); ?>
 
-            <div class=" col-sm-6 col-md-4 mb-3 card " style="width: 32%; ">
+            <div class=" col-sm-6 col-md-4 mb-3 card p-0" style="width: 32%; ">
 
                 <div class="" style="height: 200px;">
                     <img class="rounded" style="width: 100%; height: 100%;" src="<?= $CONTENT_URL ?>/images/products/<?= $image ?>" alt="Card image cap"></a>
 
                 </div>
                 <a href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>">
-                    <div class="card-body text-center">
+                    <div class="card-body text-center p-0 p-2 bg-success">
                         <a class="text-dark text-decoration-none text-uppercase" href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>">
                             <h5 class="card-title text-center align-self-stretch"><?= $name ?></h5>
                         </a>
@@ -35,21 +35,21 @@ $items_all = commodities_select_all_home();
                             <div>
 
                                 <span>
-                                    <i class="fa fa-star"></i>
-                            </span>
-                            <span>
-                                <i class="fa fa-star"></i>
-                            </span>
-                            <span>
-                                <i class="fa fa-star"></i>
-                            </span>
-                            <span>
-                                <i class="fa fa-star"></i>
-                            </span>
-                            <span>
-                                <i class="fa fa-star"></i>
-                            </span>
-                        </div>
+                                    <i class="fa fa-star text-wraning"></i>
+                                </span>
+                                <span>
+                                    <i class="fa fa-star text-wraning"></i>
+                                </span>
+                                <span>
+                                    <i class="fa fa-star text-wraning"></i>
+                                </span>
+                                <span>
+                                    <i class="fa fa-star text-wraning"></i>
+                                </span>
+                                <span>
+                                    <i class="fa fa-star text-wraning"></i>
+                                </span>
+                            </div>
                             <span><?= $view ?> Lượt xem</span>
                         </div>
 

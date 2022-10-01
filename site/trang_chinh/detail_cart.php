@@ -1,8 +1,15 @@
 <?php
- require_once "../../global.php";
- require_once "../../dao/customer.php";
- 
-$cart = $_SESSION['cart'];
+require_once "../../global.php";
+require_once "../../dao/customer.php";
+
+if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
+    echo "KHông có sản phẩm nào trong giỏ hàng";
+    exit;
+} else {
+
+    $cart = $_SESSION['cart'];
+}
+
 $sum = 0;
 ?>
 <table class="table">
@@ -15,11 +22,9 @@ $sum = 0;
         <th>Tổng tiền</th>
         <th>Xóa</th>
     </tr>
-    <?php foreach ($cart as $id => $each) : 
-// var_dump($id);
-// var_dump($each);
-// die;
-?>
+    <?php foreach ($cart as $id => $each) :
+
+    ?>
         <tr>
             <td>
                 <img width="100" height="" src="<?= $each['image'] ?>" alt="">
@@ -29,7 +34,7 @@ $sum = 0;
                 <?= $each['name'] ?>
             </td>
             <td>
-                <?=number_format( $each['price']) ?>
+                <?= number_format($each['price']) ?>
             </td>
             <td>
                 <a href="update_quantity_in_cart.php?id=<?= $id ?>&type=decre">
@@ -61,10 +66,10 @@ $sum = 0;
     <?php echo $sum ?>
 </h1>
 <?php
-if(isset($_SESSION['user'])){
+if (isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
     $each = customer_select_by_id($_SESSION['user']['id']);
-    ?>
+?>
     <form action="#" method="post">
         Tên người nhận
         <input type="text" name="name_receiver" value="<?= $each['name'] ?>">
@@ -73,22 +78,21 @@ if(isset($_SESSION['user'])){
         <input type="text" name="phone_receiver">
         <br>
         Địa chỉ người nhận
-        <input type="text" name='address_receiver' >
+        <input type="text" name='address_receiver'>
         <br>
         <button>Đặt hàng</button>
     </form>
-<?php }
-else{
-    ?>
+<?php } else {
+?>
     <form action="#" method="post">
         Tên người nhận
-        <input type="text" name="name_receiver" >
+        <input type="text" name="name_receiver">
         <br>
         Số điện thoại người nhận
         <input type="text" name="phone_receiver">
         <br>
         Địa chỉ người nhận
-        <input type="text" name='address_receiver' >
+        <input type="text" name='address_receiver'>
         <br>
         <button>Đặt hàng</button>
     </form>

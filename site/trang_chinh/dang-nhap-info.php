@@ -6,6 +6,10 @@
         border-radius: 5px;
     }
 </style>
+<?php
+require '../../check_user_admin.php.php';
+
+?>
 <div class="panel panel-default nn-panle-login">
     <div class="panel-heading">TÀI KHOẢN</div>
     <div class="panel-body">

@@ -6,21 +6,21 @@
     </ul>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="<?=$CONTENT_URL?>/images/products/3.PNG" style="width: 100%; margin:auto">
+            <img src="<?=$CONTENT_URL?>/images/products/3.PNG" style="width: 100%; height:200px; margin:auto">
             <div class="carousel-caption">
                 <h3>Los Angeles</h3>
                 <p>We had such a great time in LA!</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?=$CONTENT_URL?>/images/products/3.PNG" style="width: 100%; margin:auto">
+            <img src="<?=$CONTENT_URL?>/images/products/3.PNG" style="width: 100%; height:200px; margin:auto">
             <div class="carousel-caption">
                 <h3>Chicago</h3>
                 <p>Thank you, Chicago!</p>
             </div>
         </div>
         <div class="carousel-item">
-            <img src="<?=$CONTENT_URL?>/images/products/3.PNG" style="width: 100%; margin:auto">
+            <img src="<?=$CONTENT_URL?>/images/products/3.PNG" style="width: 100%; height:200px; margin:auto">
             <div class="carousel-caption">
                 <h3>New York</h3>
                 <p>We love the Big Apple!</p>
