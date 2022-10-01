@@ -1,6 +1,7 @@
 <?php
 require "../../global.php";
 require "../../dao/comments.php";
+require_once "../check_admin.php";
 
 require "../../dao/thong_ke.php";
 

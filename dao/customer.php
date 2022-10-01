@@ -19,6 +19,12 @@ function customer_check_email_exits($email)
   from customer  where email = ?";
   return pdo_query_one($sqlCheckEmail, $email);
 }
+function customer_check_email_exits_insert($email, $id)
+{
+  $sqlCheckEmail = "select count(*) from customer
+  where email =? and id != ?";
+  return pdo_query($sqlCheckEmail, $email, $id);
+}
 
 
 
@@ -53,6 +59,11 @@ function customer_getInfo($id)
 }
 
 // // cập nhập thông tin 1 mã loại 
+function customer_update_admin($id,  $name, $kich_hoat, $avatar, $vai_tro)
+{
+  $sql = "update customer set  name=?, kich_hoat=?, avatar=?, vai_tro=? where id=?";
+  return  pdo_excute($sql, $name, $kich_hoat, $avatar,  $vai_tro, $id);
+}
 function customer_update($id, $password, $name, $kich_hoat, $avatar, $email, $vai_tro)
 {
   $sql = "update customer set password=?, name=?, kich_hoat=?, avatar=?, email=?, vai_tro=? where id=?";

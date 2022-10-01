@@ -1,4 +1,4 @@
-<h1 class="alert alert-success">Sửa thông tin Hàng hóa</h1>
+<h1 class="text-center py-3 text-primary">Sửa thông tin Hàng hóa</h1>
 <!-- `name`, `price`, `sell`, `image`, `date_add`, `description`, `special`, `view`, `category_id` -->
 <form action="index.php" method="post" enctype="multipart/form-data">
     <div class="row">
@@ -72,10 +72,10 @@
 
 
         <div class="form-group col-sm-12">
-            <button name="btn_update" class="btn btn-default">Cập nhập</button>
-            <button type="reset" class="btn btn-default">Nhập lại</button>
-            <a href="index.php" class="btn btn-default">Thêm mới</a>
-            <a href="index.php?btn_list" class="btn btn-default">Danh sách</a>
+            <button name="btn_update" class="btn btn-success">Cập nhập</button>
+            <button type="reset" class="btn btn-warning">Nhập lại</button>
+            <a href="index.php" class="btn btn-primary">Thêm mới</a>
+            <a href="index.php?btn_list" class="btn btn-info">Danh sách</a>
 
         </div>
     </div>

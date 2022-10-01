@@ -1,8 +1,10 @@
 <?php
+require "../../global.php";
+require_once "../check_admin.php";
+
 require_once "../../dao/pdo.php";
 require_once "../../dao/commodities.php";
 require_once "../../dao/categories.php";
-require "../../global.php";
 extract($_REQUEST);
 
 if (exist_params("btn_list")) {

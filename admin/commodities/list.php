@@ -1,4 +1,4 @@
-<h3>Quản lý hàng hóa</h3>
+<h3 class="text-center py-3 text-primary">Quản lý hàng hóa</h3>
 
 <ul class="pager">
     <li><a href="?btn_list&page_no=0">|&lt;</a></li>
@@ -32,15 +32,15 @@
                         <input type="checkbox" name="id[]" value="<?= $id ?>">
                     </th>
 
-                    <td><?= $id ?></td>
-                    <td><?= $name ?></td>
-                    <td><img style="width:100px;" src="<?=$CONTENT_URL?>/images/products/<?= $image ?>" alt=""></td>
+                    <td class="pb-3 pt-3"><?= $id ?></td>
+                    <td class="pb-3 pt-3"><?= $name ?></td>
+                    <td class="pb-3 pt-3"><img style="width:100px;" src="<?=$CONTENT_URL?>/images/products/<?= $image ?>" alt=""></td>
 
-                    <td>$<?= number_format($price, 2) ?></td>
-                    <td><?= number_format($sell*100) ?>%</td>
-                    <td><?= $commodity_id ?></td>
-                    <td><?= $view ?></td>
-                    <td>
+                    <td class="pb-3 pt-3">$<?= number_format($price, 2) ?></td>
+                    <td class="pb-3 pt-3"><?= number_format($sell*100) ?>%</td>
+                    <td class="pb-3 pt-3"><?= $commodity_id ?></td>
+                    <td class="pb-3 pt-3"><?= $view ?></td>
+                    <td class="pb-3 pt-3">
                         <a href="index.php?btn_edit&id=<?= $id ?>" class="">Sửa</a>
                         <a href="index.php?btn_delete&id=<?= $id ?>" class="">Xóa</a>
                     </td>
@@ -50,18 +50,17 @@
         <tfoot>
             <tr>
                 <td colspan="9">
-                    <button id="check-all" class="btn btn-default">
+                    <button id="check-all" class="btn btn-success">
                         Chọn tất cả
                     </button>
-                    <button id="clear-all" class="btn btn-default">
-                        Xóa tất cả
+                    <button id="clear-all" class="btn btn-warning">
+                        Bỏ chọn tất cả
                     </button>
-                    <button id="delete-all" class="btn btn-default" name="btn_delete">
+                    <button id="delete-all" class="btn btn-danger" name="btn_delete">
                         Xóa các mục đã chọn
                     </button>
-                    <button id="" class="btn btn-default">
-                        <a href="index.php" class=" btn-default">Nhập thêm</a>
-                    </button>
+                    
+                        <a href="index.php" class="btn btn-info">Nhập thêm</a>
                 </td>
             </tr>
         </tfoot>
