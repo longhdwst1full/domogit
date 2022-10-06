@@ -1,20 +1,20 @@
-<nav class="d-flex flex-wrap navbar-expand-lg navbar-success bg-success py-4">
+<nav class="d-flex flex-wrap navbar-expand-lg navbar-success py-4">
     <div class="container d-flex justify-content-between align-items-center">
         <a class="navbar-brand  col-3 order-lg-0" href="<?= $SITE_URL ?>/trang_chinh/index.php">
-            <img src="../../content/images/products/3.PNG" style="width:50px; height:50px" alt="">
-            <span class="text-uppercase fw-lighter ms-2">Attire</span>
+            <!-- <img src="../../content/images/products/3.PNG" style="width:50px; height:50px" alt=""> -->
+            <span class="text-uppercase fw-lighter ms-2">Xshop</span>
 
         </a>
 
 
         <form class="d-flex col-6">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light bg-light text-dark" type="submit">Search</button>
+            <button class="btn btn-outline-light bg-wraning text-success " type="submit">Search</button>
         </form>
-        <div class="order-lg-2 col-3 nav-btns d-flex">
+        <div class="order-lg-2 col-3 nav-btns d-flex justify-content-center">
             <button type="button" class="btn position-relative">
                 <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">5</span>
-                <a class="text-light text-decoration-none pl-2" href="<?= $SITE_URL ?>/trang_chinh/index.php?view_cart"> <i class="fa fa-shopping-cart text-dark"></i>Giỏ hàng</a>
+                <a class="text-light text-decoration-none pl-2" href="<?= $SITE_URL ?>/trang_chinh/index.php?view_cart"> <i class="fa fa-shopping-cart  text-black-50"></i></a>
             </button>
             <!-- <button type="button" class="btn position-relative">
                 <i class="fa fa-heart"></i>

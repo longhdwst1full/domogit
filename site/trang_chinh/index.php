@@ -13,6 +13,7 @@ require "../../global.php";
 
 extract($_REQUEST);
 
+echo $MESSAGE;
 
 if (exist_params("gioi_thieu", $_REQUEST)) {
     $VIEW_NAME = "gioi-thieu.php";
@@ -34,7 +35,19 @@ if (exist_params("gioi_thieu", $_REQUEST)) {
 
     session_unset();
     $VIEW_NAME = "home.php";
-} else {
+} 
+else if(exist_params("dat_hang")){
+if(isset($_SESSION['user'])){
+    echo "<alert>Đặt hàng thành công </alert>";
+    $VIEW_NAME ="home.php";
+}
+else{
+    header("Location:../tai_khoan/dang-nhap-form.php");
+    die;
+}
+}
+
+else {
     $VIEW_NAME = "home.php";
     // require '../../dao/commodities.php';
     // $dac_biet_list = commodities_select_dac_biet();

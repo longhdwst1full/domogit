@@ -13,6 +13,11 @@ if (exist_params("btn_list")) {
 } else if (exist_params("btn_insert")) {
     // lấy dữ liệu từ form
     $name = $_POST["name"];
+    require "../../content/validate_server_add_loai.php";
+    if(!empty($nameerr)){
+        $VIEW_NAME = "add.php";
+        header("location: ?nameerr=$nameerr");
+    }
     // insert db
     loai_insert($name);
     // show dữ liệu

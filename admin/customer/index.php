@@ -17,6 +17,12 @@ if (exist_params("btn_list")) {
     // $avatar = $_FILES["avatar"];
     $email = $_POST["email"];
     $vai_tro = $_POST["vai_tro"];
+require "../../content/validate_server_add_user.php";
+if (!empty($emailerr) || !empty($passworderr) || !empty($nameerr) || !empty($avatarerr)) {
+    $VIEW_NAME="add.php";
+    header("location:?emailerr=$emailerr&passworderr=$passworderr&nameerr=$nameerr&avatarerr=$avatarerr");
+   
+}
 
     $file_name = save_file("avatar", "$IMAGE_DIR/users/");
     $forder_img = $file_name ? $file_name : "user.png";

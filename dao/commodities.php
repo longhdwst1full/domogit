@@ -17,16 +17,23 @@ function commodities_delete($id)
     $sql = "dELETE FROM commodities WHERE id=?";
     if (is_array($id)) {
         foreach ($id as $value) {
-
+            
             pdo_excute($sql, $value);
         }
     } else {
         pdo_excute($sql, $id);
+        // var_dump($sql);
+        // die;
     }
 }
 function commodities_select_all()
 {
     $sql = "sELECT * FROM commodities";
+    return pdo_query($sql);
+}
+function commodities_count()
+{
+    $sql = "sELECT count(*) as sl FROM commodities ";
     return pdo_query($sql);
 }
 function commodities_select_by_id($id)
@@ -79,6 +86,11 @@ function commodities_select_all_home()
 {
     $sql = "select * from commodities order by id desc limit 9";
     return pdo_query($sql);
+}
+function commodities_select_customize_category($category_id)
+{
+    $sql = "select * from commodities where category_id=?  order by id desc limit 0, 6";
+    return pdo_query($sql,$category_id);
 }
 
 function commodities_select_page()

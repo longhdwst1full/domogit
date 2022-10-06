@@ -8,6 +8,9 @@
         <div class="mb-3">
             <label for="formGroupExampleInput2" class="form-label" style="font-weight: bold;">Tên loại</label>
             <input type="text" name="name" class="form-control w-50" id="formGroupExampleInput2">
+            <?php if (isset($_GET['nameerr'])) : ?>
+                    <span style="color: red"><?= $_GET['nameerr'] ?></span>
+                <?php endif ?>
         </div>
         <div class="form-group">
             <button type="submit" name="btn_insert" class="btn btn-success">Thêm mới</button>

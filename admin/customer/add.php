@@ -7,10 +7,17 @@
         <div class="form-group col-sm-6">
             <label for="" class="fw-bold p-2">Họ Tên</label>
             <input type="text" name="name" class="form-control" placeholder="">
+            <?php if(isset($_GET['nameerr'])):?>
+                <span style="color: red"><?= $_GET['nameerr']?></span>
+            <?php endif ?>
         </div>
         <div class="form-group col-sm-6">
             <label for="" class="fw-bold p-2">Mật khẩu</label>
-            <input type="password" name="password" class="form-control" placeholder="">
+            <input type="password" name="password" class="form-control" placeholder=""> 
+            <?php if(isset($_GET['passworderr'])):?>
+                <span style="color: red"><?= $_GET['passworderr']?></span>
+            <?php endif ?>
+           
         </div>
 
     </div>
@@ -18,10 +25,16 @@
         <div class="form-group col-sm-6">
             <label for="" class="fw-bold p-2">Email</label>
             <input type="text" name="email" class="form-control" placeholder="">
+            <?php if(isset($_GET['emailerr'])):?>
+                <span style="color: red"><?= $_GET['emailerr']?></span>
+            <?php endif ?>
         </div>
         <div class="form-group col-sm-6">
             <label for="" class="fw-bold p-2">Hình ảnh</label>
             <input type="file" name="avatar" class="form-control" placeholder="">
+            <?php if(isset($_GET['avatarerr'])):?>
+                <span style="color: red"><?= $_GET['avatarerr'] ?></span>
+            <?php endif ?>
         </div>
     </div>
     <div class="row">

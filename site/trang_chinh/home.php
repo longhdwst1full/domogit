@@ -2,62 +2,200 @@
 require "slider.php";
 require_once "../../global.php";
 require_once '../../dao/commodities.php';
-$dac_biet_list = commodities_select_dac_biet();
+// $items_all = commodities_select_dac_biet();
 $items_all = commodities_select_all_home();
+// $phone_list
 
 ?>
 
-<div class="row mt-5 pt-20 d-flex justify-content-around align-items-baseliner">
+<link rel="stylesheet" href="../../content/css/products.css">
+<style>
+    img {
+        width: 100%;
+    }
+</style>
 
+<a href="" class="btn btn-info w-25 mt-3">
+    Hàng đăc biệt </a>
+<div class="row  pt-3 d-flex align-content-stretch flex-wrap">
     <?php
     if ($items_all) {
 
-        foreach ($items_all as $value) : extract($value); ?>
+        foreach ($items_all as $value) : extract($value);
+            if ($special == 0) { ?>
+                <div class="col-4 mt-2 mb-2 product-item mx-auto p-0">
+                    <div class="product-img" style="height: 200px;">
+                        <img src="<?= $CONTENT_URL ?>/images/products/<?= $image ?>" alt="" class="img-fluid d-block mx-auto">
+                        <span class="heart-icon">
+                            <i class="far fa-heart"></i>
+                        </span>
+                        <div class="row btns w-100 mx-auto text-center">
+                            <button type="button" class="col-6 py-2">
+                                <a class="text-light text-hover text-decoration-none" href="add_to_cart.php?product_id=<?= $id ?>">
+                                    <i class="fa fa-cart-plus"></i> Add to Cart
+                                </a>
+                            </button>
+                            <button type="button" class="col-6 py-2">
+                                <a class="text-light text-hover text-decoration-none" href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>">
 
-            <div class=" col-sm-6 col-md-4 mb-3 card p-0" style="width: 32%; ">
-
-                <div class="" style="height: 200px;">
-                    <img class="rounded" style="width: 100%; height: 100%;" src="<?= $CONTENT_URL ?>/images/products/<?= $image ?>" alt="Card image cap"></a>
-
-                </div>
-                <a href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>">
-                    <div class="card-body text-center p-0 p-2 bg-success">
-                        <a class="text-dark text-decoration-none text-uppercase" href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>">
-                            <h5 class="card-title text-center align-self-stretch"><?= $name ?></h5>
-                        </a>
-                        <h5 class="card-title text-left">Mã hàng hóa: <?= $id ?></h5>
-                        <div class="d-flex justify-content-between align-items-center">
-
-                            <p class="card-text m-0 pb-3 ">Đơn giá :</p>
-                            <span class="fs-4 text-danger"><?= number_format($price, 2) ?>đ</span>
+                                    <i class="fa fa-binoculars"></i> View
+                                </a>
+                            </button>
                         </div>
-                        <div class="rating d-flex mt-1 justify-content-between my-2">
+                    </div>
+
+                    <div class="product-info p-3 text-center d-flex flex-column  align-content-stretch">
+                        <span class="product-type"></span>
+                        <a style="min-height: 48px;" href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>" class="d-block  text-dark text-decoration-none py-2 product-name"><?= $name ?></a>
+                        <span class="product-price pt-3 fs-5"><?= number_format($price, 2) ?>đ</span>
+                        <div class="rating d-flex mt-1 py-2 justify-content-between">
                             <div>
 
                                 <span>
-                                    <i class="fa fa-star text-wraning"></i>
+                                    <i class="fa fa-star"></i>
                                 </span>
                                 <span>
-                                    <i class="fa fa-star text-wraning"></i>
+                                    <i class="fa fa-star"></i>
                                 </span>
                                 <span>
-                                    <i class="fa fa-star text-wraning"></i>
+                                    <i class="fa fa-star"></i>
                                 </span>
                                 <span>
-                                    <i class="fa fa-star text-wraning"></i>
+                                    <i class="fa fa-star"></i>
                                 </span>
                                 <span>
-                                    <i class="fa fa-star text-wraning"></i>
+                                    <i class="fa fa-star"></i>
                                 </span>
                             </div>
-                            <span><?= $view ?> Lượt xem</span>
+                            <span class="text-right fs-6"><?= $view ?> lượt xem</span>
                         </div>
-
-
-                        <a href="add_to_cart.php?product_id=<?= $id ?>" class="btn btn-primary mt-2 text-center">Thêm vào giỏ hàng</a>
                     </div>
-            </div>
-    <?php endforeach;
-    } ?>
+                </div>
 
+    <?php }
+        endforeach;
+    } ?>
+</div>
+
+<a href="" class="btn btn-info w-25 mt-3">
+    Điện thoại </a>
+<div class="row  pt-3 d-flex align-content-stretch flex-wrap">
+    <?php
+    if ($items_all) {
+
+        foreach ($items_all as $value) : extract($value);
+            if ($category_id == 4) { ?>
+                <div class="col-4 mt-2 mb-2 product-item mx-auto p-0">
+                    <div class="product-img" style="height: 200px;">
+                        <img src="<?= $CONTENT_URL ?>/images/products/<?= $image ?>" alt="" class="img-fluid d-block mx-auto">
+                        <span class="heart-icon">
+                            <i class="far fa-heart"></i>
+                        </span>
+                        <div class="row btns w-100 mx-auto text-center">
+                            <button type="button" class="col-6 py-2">
+                                <a class="text-light text-hover text-decoration-none" href="add_to_cart.php?product_id=<?= $id ?>">
+                                    <i class="fa fa-cart-plus"></i> Add to Cart
+                                </a>
+                            </button>
+                            <button type="button" class="col-6 py-2">
+                                <a class="text-light text-hover text-decoration-none" href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>">
+
+                                    <i class="fa fa-binoculars"></i> View
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-info p-3 text-center d-flex flex-column  align-content-stretch">
+                        <span class="product-type"></span>
+                        <a style="min-min-height: 48px;" href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>" class="d-block  text-dark text-decoration-none py-2 product-name"><?= $name ?></a>
+                        <span class="product-price pt-3 fs-5"><?= number_format($price, 2) ?>đ</span>
+                        <div class="rating d-flex mt-1 py-2 justify-content-between">
+                            <div>
+
+                                <span>
+                                    <i class="fa fa-star"></i>
+                                </span>
+                                <span>
+                                    <i class="fa fa-star"></i>
+                                </span>
+                                <span>
+                                    <i class="fa fa-star"></i>
+                                </span>
+                                <span>
+                                    <i class="fa fa-star"></i>
+                                </span>
+                                <span>
+                                    <i class="fa fa-star"></i>
+                                </span>
+                            </div>
+                            <span class="text-right fs-6"><?= $view ?> lượt xem</span>
+                        </div>
+                    </div>
+                </div>
+
+    <?php }
+        endforeach;
+    } ?>
+</div>
+<a href="" class="btn btn-info w-25 mt-3">
+    Máy tính </a>
+<div class="row  pt-3 d-flex align-content-stretch flex-wrap">
+    <?php
+    if ($items_all) {
+
+        foreach ($items_all as $value) : extract($value);
+            if ($category_id == 2) { ?>
+                <div class="col-4 mt-2 mb-2 product-item mx-auto p-0">
+                    <div class="product-img" style="height: 200px;">
+                        <img src="<?= $CONTENT_URL ?>/images/products/<?= $image ?>" alt="" class="img-fluid d-block mx-auto">
+                        <span class="heart-icon">
+                            <i class="far fa-heart"></i>
+                        </span>
+                        <div class="row btns w-100 mx-auto text-center">
+                            <button type="button" class="col-6 py-2">
+                                <a class="text-light text-hover text-decoration-none" href="add_to_cart.php?product_id=<?= $id ?>">
+                                    <i class="fa fa-cart-plus"></i> Add to Cart
+                                </a>
+                            </button>
+                            <button type="button" class="col-6 py-2">
+                                <a class="text-light text-hover text-decoration-none" href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>">
+
+                                    <i class="fa fa-binoculars"></i> View
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-info p-3 text-center d-flex flex-column  align-content-stretch">
+                        <span class="product-type"></span>
+                        <a style="min-height: 48px;" href="<?= $SITE_URL ?>/hang_hoa/chi-tiet.php?id=<?= $id ?>" class="d-block  text-dark text-decoration-none py-2 product-name"><?= $name ?></a>
+                        <span class="product-price pt-3 fs-5"><?= number_format($price, 2) ?>đ</span>
+                        <div class="rating d-flex mt-1 py-2 justify-content-between">
+                            <div>
+
+                                <span>
+                                    <i class="fa fa-star"></i>
+                                </span>
+                                <span>
+                                    <i class="fa fa-star"></i>
+                                </span>
+                                <span>
+                                    <i class="fa fa-star"></i>
+                                </span>
+                                <span>
+                                    <i class="fa fa-star"></i>
+                                </span>
+                                <span>
+                                    <i class="fa fa-star"></i>
+                                </span>
+                            </div>
+                            <span class="text-right fs-6"><?= $view ?> lượt xem</span>
+                        </div>
+                    </div>
+                </div>
+
+    <?php }
+        endforeach;
+    } ?>
 </div>

@@ -42,6 +42,12 @@ function binh_luan_exist($id)
 function binh_luan_select_by_hang_hoa($commodity_id)
 {
     $sql = "select b.*,h.name from comments b join commodities h on h.id=b.commodity_id
-    where b.commodity_id=? order by date_comment DESC";
+    where b.commodity_id=? ORDER BY date_comment";
+    return pdo_query($sql, $commodity_id);
+}
+function binh_luan_select_by_customer($commodity_id)
+{
+    
+    $sql = "select comments.*,customer.name as name_person_comment from comments join customer  on comments.customer_id=customer.id  WHERE commodity_id =? ORDER BY date_comment";
     return pdo_query($sql, $commodity_id);
 }

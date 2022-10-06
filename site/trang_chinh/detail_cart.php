@@ -3,7 +3,7 @@ require_once "../../global.php";
 require_once "../../dao/customer.php";
 
 if (!isset($_SESSION['cart']) || empty($_SESSION['cart'])) {
-    echo "KHông có sản phẩm nào trong giỏ hàng";
+    echo "<h5 class='text-center text-info mt-4'>Bạn chưa có đặt sản phẩm nào.</h5>";
     exit;
 } else {
 
@@ -14,7 +14,7 @@ $sum = 0;
 ?>
 <table class="table">
     <h3 class="text-center my-3">Giỏ hàng của bạn</h3>
-    <tr>
+    <tr class="table-success">
         <th>Ảnh</th>
         <th>Tên sản phẩm</th>
         <th>Giá</th>
@@ -25,9 +25,9 @@ $sum = 0;
     <?php foreach ($cart as $id => $each) :
 
     ?>
-        <tr>
+        <tr class="py-2">
             <td>
-                <img width="100" height="" src="<?= $each['image'] ?>" alt="">
+                <img width="100" height="" src="<?= $CONTENT_URL ?>/images/products/<?= $each['image'] ?>" alt="">
 
             </td>
             <td>
@@ -57,7 +57,7 @@ $sum = 0;
 
             </td>
             <td>
-                <a href="delete_from_cart.php?id=<?= $id ?>">Xóa</a>
+                <a class="btn btn-danger" href="delete_from_cart.php?id=<?= $id ?>">Xóa</a>
             </td>
         </tr>
     <?php endforeach ?>
@@ -70,30 +70,59 @@ if (isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
     $each = customer_select_by_id($_SESSION['user']['id']);
 ?>
-    <form action="#" method="post">
-        Tên người nhận
-        <input type="text" name="name_receiver" value="<?= $each['name'] ?>">
-        <br>
-        Số điện thoại người nhận
-        <input type="text" name="phone_receiver">
-        <br>
-        Địa chỉ người nhận
-        <input type="text" name='address_receiver'>
-        <br>
-        <button>Đặt hàng</button>
+    <form action="#" method="post" class="mt-3">
+        <div class="form-group">
+            <label for="">Tên người nhận</label>
+            <input type="text" class="form-control" name="name_receiver" value="<?= $each['name'] ?>">
+        </div>
+        <div class="form-group">
+            <label for="">
+
+                Số điện thoại người nhận
+            </label>
+            <input class="form-control" type="text" name="phone_receiver">
+
+        </div>
+        <div class="form-group">
+            <label for="">
+
+                Địa chỉ người nhận
+            </label>
+            <input class="form-control" type="text" name='address_receiver'>
+
+        </div>
+        <div class="form-group">
+
+            <button class="btn btn-primary" name="dat_hang">Đặt hàng</button>
+        </div>
     </form>
-<?php } else {
+<?php  } else {
+
 ?>
-    <form action="#" method="post">
-        Tên người nhận
-        <input type="text" name="name_receiver">
-        <br>
-        Số điện thoại người nhận
-        <input type="text" name="phone_receiver">
-        <br>
-        Địa chỉ người nhận
-        <input type="text" name='address_receiver'>
-        <br>
-        <button>Đặt hàng</button>
+    <form action="#" method="post" class="mt-3">
+        <div class="form-group">
+            <label for="">Tên người nhận</label>
+            <input type="text" class="form-control" name="name_receiver" >
+        </div>
+        <div class="form-group">
+            <label for="">
+
+                Số điện thoại người nhận
+            </label>
+            <input class="form-control" type="text" name="phone_receiver">
+
+        </div>
+        <div class="form-group">
+            <label for="">
+
+                Địa chỉ người nhận
+            </label>
+            <input class="form-control" type="text" name='address_receiver'>
+
+        </div>
+        <div class="form-group">
+
+            <button class="btn btn-primary" name="dat_hang">Đặt hàng</button>
+        </div>
     </form>
-<?php }
+<?php } ?>

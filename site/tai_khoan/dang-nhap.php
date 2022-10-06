@@ -9,7 +9,8 @@ if (exist_params("btn_login")) {
     $user = customer_check_email($email);
     if ($user) {
         if ($user['password'] == $password) {
-            $MESSAGE = "Đăng nhập thành công!";
+            $MESSAGE = "<script>alert('Đăng nhập thành công!')</script>";
+            header("Location:$SITE_URL/trang_chinh/index.php");
             if (exist_params('ghi_nho')) {
                 add_cookie('email', $email, 30);
                 add_cookie('password', $password, 30);
