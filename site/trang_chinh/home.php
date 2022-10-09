@@ -1,10 +1,10 @@
 <?php
-require "slider.php";
 require_once "../../global.php";
 require_once '../../dao/commodities.php';
 // $items_all = commodities_select_dac_biet();
 $items_all = commodities_select_all_home();
-// $phone_list
+
+require "slider.php";
 
 ?>
 
@@ -17,13 +17,13 @@ $items_all = commodities_select_all_home();
 
 <a href="" class="btn btn-info w-25 mt-3">
     Hàng đăc biệt </a>
-<div class="row  pt-3 d-flex align-content-stretch flex-wrap">
+<div class="row  pt-3 d-flex align-content-stretch justify-content-between flex-wrap">
     <?php
     if ($items_all) {
 
         foreach ($items_all as $value) : extract($value);
             if ($special == 0) { ?>
-                <div class="col-4 mt-2 mb-2 product-item mx-auto p-0">
+                <div class="col-4 mt-2 mb-2 product-item  p-0  ">
                     <div class="product-img" style="height: 200px;">
                         <img src="<?= $CONTENT_URL ?>/images/products/<?= $image ?>" alt="" class="img-fluid d-block mx-auto">
                         <span class="heart-icon">
@@ -79,13 +79,13 @@ $items_all = commodities_select_all_home();
 
 <a href="" class="btn btn-info w-25 mt-3">
     Điện thoại </a>
-<div class="row  pt-3 d-flex align-content-stretch flex-wrap">
+<div class="row  pt-3 d-flex align-content-stretch justify-content-between flex-wrap">
     <?php
     if ($items_all) {
 
         foreach ($items_all as $value) : extract($value);
             if ($category_id == 4) { ?>
-                <div class="col-4 mt-2 mb-2 product-item mx-auto p-0">
+                <div class="col-4 mt-2 mb-2 product-item  p-0  ">
                     <div class="product-img" style="height: 200px;">
                         <img src="<?= $CONTENT_URL ?>/images/products/<?= $image ?>" alt="" class="img-fluid d-block mx-auto">
                         <span class="heart-icon">
@@ -140,13 +140,13 @@ $items_all = commodities_select_all_home();
 </div>
 <a href="" class="btn btn-info w-25 mt-3">
     Máy tính </a>
-<div class="row  pt-3 d-flex align-content-stretch flex-wrap">
+<div class="row  pt-3 d-flex align-content-stretch justify-content-between flex-wrap">
     <?php
     if ($items_all) {
 
         foreach ($items_all as $value) : extract($value);
             if ($category_id == 2) { ?>
-                <div class="col-4 mt-2 mb-2 product-item mx-auto p-0">
+                <div class="col-4 mt-2 mb-2 product-item  p-0  ">
                     <div class="product-img" style="height: 200px;">
                         <img src="<?= $CONTENT_URL ?>/images/products/<?= $image ?>" alt="" class="img-fluid d-block mx-auto">
                         <span class="heart-icon">

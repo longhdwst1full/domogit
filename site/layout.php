@@ -42,15 +42,13 @@
             </article>
 
 
-            <aside class="col-sm-3 mt-3 border">
+            <aside class="col-sm-3 mt-3 border h-100">
 
                 <?php
                 if (isset($_SESSION['user'])) {
                     require "tai_khoan/dang-nhap-info.php";
                 }
-                // else {
-                //     require "trang_chinh/tai_khoan.php";
-                // }
+               
                 require "trang_chinh/danh_muc.php";
                 require "trang_chinh/top10.php";
                 ?>

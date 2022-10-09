@@ -5,7 +5,7 @@ $list_top10 = commodities_select_top10();
 
 ?>
 
-<div class=" card mt-3 ">
+<div class=" card my-3">
 <div class="card-header" style="font-weight: 500">
             TOP 10 YÊU THÍCH
         </div>

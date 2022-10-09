@@ -17,22 +17,20 @@ if (exist_params("btn_list")) {
     // $avatar = $_FILES["avatar"];
     $email = $_POST["email"];
     $vai_tro = $_POST["vai_tro"];
-require "../../content/validate_server_add_user.php";
-if (!empty($emailerr) || !empty($passworderr) || !empty($nameerr) || !empty($avatarerr)) {
-    $VIEW_NAME="add.php";
-    header("location:?emailerr=$emailerr&passworderr=$passworderr&nameerr=$nameerr&avatarerr=$avatarerr");
-   
-}
+    require "../../content/validate_server_add_user.php";
+    if (!empty($emailerr) || !empty($passworderr) || !empty($nameerr) || !empty($avatarerr)) {
+        $VIEW_NAME = "add.php";
+        header("location:?emailerr=$emailerr&passworderr=$passworderr&nameerr=$nameerr&avatarerr=$avatarerr");
+    }
 
     $file_name = save_file("avatar", "$IMAGE_DIR/users/");
     $forder_img = $file_name ? $file_name : "user.png";
     // insert db
-    $email_exit=customer_check_email($email);
-    if($email_exit){
-        $MESSAGE="Email đã tồn tại";
-        $VIEW_NAME ="add.php";
-    }
-    else{
+    $email_exit = customer_check_email($email);
+    if ($email_exit) {
+        $MESSAGE = "Email đã tồn tại";
+        $VIEW_NAME = "add.php";
+    } else {
         // show dữ liệu
         $items = customer_selecAll();
         $VIEW_NAME = "list.php";
@@ -61,7 +59,7 @@ if (!empty($emailerr) || !empty($passworderr) || !empty($nameerr) || !empty($ava
     $VIEW_NAME = "list.php";
 } else if (exist_params("btn_update")) {
     // lấy dữ liệu từ form
-  
+
     $id = $_POST['id'];
     $name = $_POST["name"];
     $kich_hoat = $_POST["kich_hoat"];
@@ -75,7 +73,7 @@ if (!empty($emailerr) || !empty($passworderr) || !empty($nameerr) || !empty($ava
         $file_name = $_POST['avatar_old'];
     }
     $vai_tro = $_POST["vai_tro"];
- 
+
     customer_update_admin($id, $name, $kich_hoat, $file_name, $vai_tro);
 
 

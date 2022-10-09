@@ -20,6 +20,10 @@
                 <li class="p-2">ĐƠN GIÁ: <?= number_format($price, 2) ?></li>
                 <li class="p-2">GIẢM GIÁ: <?= $sell * 100 ?>%</li>
             </ul>
+            <div class="p-2">
+                Số lượng <button class="btn btn-danger mx-2">-</button>1
+                <button class="btn btn-primary mx-2">+</button>
+            </div>
             <a href="<?= $SITE_URL ?>/trang_chinh/add_to_cart.php?product_id=<?= $id ?>" class="btn btn-primary">Thêm vào giỏ hàng</a>
         </div>
     </div>

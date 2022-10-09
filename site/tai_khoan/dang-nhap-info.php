@@ -11,8 +11,9 @@
 // require "../../global.php";
 ?>
 <div class="panel panel-default nn-panle-login">
-    <div class="panel-heading">TÀI KHOẢN</div>
-    <div class="panel-body">
+    <div class="panel-heading text-center py-3">TÀI KHOẢN</div>
+    <div class="panel-body m-auto d-flex flex-column align-items-center">
+        
         <div class="text-center" style="width: 200px;">
             <div>
 
@@ -30,8 +31,11 @@
                 Đăng xuất
             </a>
         </li> -->
-        <li class="" ><a  class="text-dark text-decoration-none"href="<?= $SITE_URL ?>/tai_khoan/index.php?doi-mk">Đổi mật khẩu</a></li>
-        <li class=""><a class="text-dark text-decoration-none"href="<?= $SITE_URL ?>/tai_khoan/index.php?update_tk">Cập nhật tài khoản</a></li>
+        <ul>
+
+            <li class="" ><a  class="text-dark text-decoration-none"href="<?= $SITE_URL ?>/tai_khoan/index.php?doi-mk">Đổi mật khẩu</a></li>
+            <li class=""><a class="text-dark text-decoration-none"href="<?= $SITE_URL ?>/tai_khoan/index.php?update_tk">Cập nhật tài khoản</a></li>
+        </ul>
         <?php
         // if ($_SESSION['user']['vai_tro'] == TRUE) {
         //     echo "<li><a href='$ADMIN_URL/trang_chinh'>Quản trị website</a></li>";

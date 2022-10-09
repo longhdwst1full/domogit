@@ -1,28 +1,4 @@
 <h3 class="text-center py-3 text-primary">Quản lý hàng hóa</h3>
-
-<ul class="pager">
-    <li><a href="?btn_list&page_no=0">1</a></li>
-    <li><a href="?btn_list&page_no=<?= $_SESSION['page_no'] - 1 ?>">2</a></li>
-    <li><a href="?btn_list&page_no=<?= $_SESSION['page_no'] + 1 ?>">3</a></li>
-    <li><a href="?btn_list&page_no=<?= $_SESSION['page_count'] - 1 ?>">4</a></li>
-</ul>
-<?php
-// $trang = 1;
-// if (isset($_GET["trang"])) {
-//     $trang = $_GET["trang"];
-// } else {
-//     $trang = "";
-// }
-// if ($trang == "" || $trang == 1) {
-//     $begin = 0;
-// } else {
-//     $begin = ($trang * 5) - 2;
-// }
-// $sp_tren1_trang = 4;
-// $so_trang = ceil($count_commodities[0][0] / $sp_tren1_trang);
-// $bo_qua = $so_tin_tuc_tren1_trang * ($trang - 1);
-// die($so_trang);
-?>
 <form action="index.php" method="post" enctype="multipart/form-data">
     <table class="table">
         <thead class="alert-success">
@@ -82,29 +58,23 @@
             </tr>
         </tfoot>
     </table>
-    <!-- <nav aria-label="...">
-        <ul class="pagination">
-            <?php
+    <div class="wrap-btn" style="display: flex; justify-content: end;">
+        <nav aria-label="...">
+            <ul class="pagination">
 
+                <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item " aria-current="page">
+                    <span class="page-link">2</span>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-           
-            // for ($i = 0; $i < $so_trang; $i++) {
-            ?>
-                <li class="page-item active"><a class="page-link" href="index.php?btn_list&trang=<?= $i ?>"><?= $i ?></a></li>
-            <?php  
-            //   }
-            ?>
-            <!-- <li class="page-item disabled">
-                <span class="page-link">Previous</span>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item " aria-current="page">
-                <span class="page-link">2</span>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li> 
-        </ul>
-    </nav> -->
 </form>

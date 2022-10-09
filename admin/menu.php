@@ -24,6 +24,9 @@
           <a href="<?= $ADMIN_URL ?>/comments/index.php" class="nav-link" href="javascript:void(0)">Bình luận</a>
         </li>
         <li class="nav-item">
+          <a href="<?= $ADMIN_URL ?>/orders/index.php" class="nav-link" href="javascript:void(0)">Đơn hàng</a>
+        </li>
+        <li class="nav-item">
           <a href="<?= $ADMIN_URL ?>/thong_ke/index.php" class="nav-link" href="javascript:void(0)">Thống kê</a>
         </li>
         <li class="nav-item">
