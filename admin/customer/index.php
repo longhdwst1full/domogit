@@ -14,17 +14,30 @@ if (exist_params("btn_list")) {
     $password = $_POST["password"];
     $name = $_POST["name"];
     $kich_hoat = $_POST["kich_hoat"];
-    // $avatar = $_FILES["avatar"];
+    $avatar = $_FILES["avatar"];
     $email = $_POST["email"];
     $vai_tro = $_POST["vai_tro"];
     require "../../content/validate_server_add_user.php";
     if (!empty($emailerr) || !empty($passworderr) || !empty($nameerr) || !empty($avatarerr)) {
         $VIEW_NAME = "add.php";
-        header("location:?emailerr=$emailerr&passworderr=$passworderr&nameerr=$nameerr&avatarerr=$avatarerr");
+        header("location:?emailerr=$emailerr&passworderr=$passworderr&nameerr=$nameerr");
+        die;
+    }
+    $file_upload = $_FILES["avatar"];
+    
+    if ($file_upload['size'] > 0) {
+        $file_name = uniqid()  . basename($file_upload['name']);
+        $target_path = "$IMAGE_DIR/users/" .  $file_name;
+
+        move_uploaded_file($file_upload['tmp_name'], $target_path);
+    } else {
+        $file_name = 'user.png';
+        $target_path = "$IMAGE_DIR/users/" .  $file_name;
+
+        move_uploaded_file($file_upload['tmp_name'], $target_path);
     }
 
-    $file_name = save_file("avatar", "$IMAGE_DIR/users/");
-    $forder_img = $file_name ? $file_name : "user.png";
+   
     // insert db
     $email_exit = customer_check_email($email);
     if ($email_exit) {

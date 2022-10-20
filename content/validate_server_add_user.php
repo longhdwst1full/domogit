@@ -2,13 +2,10 @@
 $nameerr = "";
 $emailerr = "";
 $passworderr = "";
-$avatarerr = "";
+
 require_once "../../dao/customer.php";
 if (strlen($name) == 0) {
     $nameerr = "Please enter your name";
-}
-if ($avatar['size'] == 0) {
-    $avatarerr = "Please choose an image";
 }
 
 if (strlen($email) == 0) {

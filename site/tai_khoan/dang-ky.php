@@ -14,12 +14,24 @@ if (exist_params("btn_register")) {
         $MESSAGE = "Email  này đã được sử dụng!";
         $VIEW_NAME = 'dang-ki-form.php';
     } else {
-        $file_name = save_file("up_hinh", "$IMAGE_DIR/users/");
-        $hinh = $file_name ? $file_name : "user.png";
+    $file_upload = $_FILES["up_hinh"];
+
+        if ($file_upload['size'] > 0) {
+            $file_name = uniqid()  . basename($file_upload['name']);
+            $target_path = "$IMAGE_DIR/users/" .  $file_name;
+    
+            move_uploaded_file($file_upload['tmp_name'], $target_path);
+        } else {
+            $file_name = 'user.png';
+            $target_path = "$IMAGE_DIR/users/" .  $file_name;
+    
+            move_uploaded_file($file_upload['tmp_name'], $target_path);
+        }
+      
         try {
             $kich_hoat = '';
             $vai_tro = '';
-            customer_insert($password, $name, $kich_hoat, $hinh, $email, $vai_tro);
+            customer_insert($password, $name, $kich_hoat, $file_name, $email, $vai_tro);
             $MESSAGE = "Đăng ký thành viên thành công!";
             $VIEW_NAME = "tai_khoan/dang-nhap-form.php";
         } catch (Exception $exc) {

@@ -29,11 +29,11 @@
                             <img src="<?= $CONTENT_URL ?>/images/users/<?= $avatar ?>" width="50px;" height="50px;" alt="">
                         </td>
                         <td class="pb-3 pt-3">
-                            <?= ($vai_tro == 1) ? "Nhân viên " : "Khách hàng" ?>
+                            <?= $vai_tro == 1 ? "Nhân viên " : "Khách hàng" ?>
                         </td>
                         <td class="td-opt pb-3 pt-3">
                             <a href="index.php?btn_edit&id=<?= $id ?>" class="btn btn-info">Sửa</a>
-                            <a href="index.php?btn_delete&id=<?= $id ?>" class=" btn btn-dagner">Xóa</a>
+                            <a href="index.php?btn_delete&id=<?= $id ?>" class=" btn btn-danger">Xóa</a>
                         </td>
                     </tr>
 

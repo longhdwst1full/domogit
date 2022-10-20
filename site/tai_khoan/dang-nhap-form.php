@@ -58,11 +58,17 @@ if (strlen($MESSAGE)) {
         <h3 class="text-center mt-5">Đăng Nhập</h3>
         <div class="mb-3 mt-3 px-3">
             <label for="username" class="form-label">Eamil đăng nhập:</label>
-            <input type="email" class="form-control" id="username" placeholder="Nhập username" name="email" />
+            <input type="email" class="form-control" id="username" placeholder="Nhập username" name="email" <?php if(isset($_POST['email']) && $_POST['email']) { ?>  value="<?=$_POST['email']?>" <?php } ?>/>
+            <span style="color:red;" class="mt-1">
+
+<?php if(isset($_GET["email_dn"])){ echo $_GET["email_dn"];  }  ?></span> 
         </div>
         <div class="mb-3 px-3">
             <label for="pwd" class="form-label">Mật khẩu:</label>
             <input type="password" class="form-control" id="pwd" placeholder="Nhập mật khẩu" name="password" />
+           <span style="color:red;" class="mt-1">
+
+           <?php if( isset($_GET["password_dn"])){echo $_GET["password_dn"]; } ?></span> 
         </div>
         <div class="form-check mb-3 mx-3">
             <label class="form-check-label" style="font-size: 14px">

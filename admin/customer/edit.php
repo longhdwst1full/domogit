@@ -42,9 +42,9 @@
             <label for="" class="fw-bold py-2">Vai trò</label>
             <div class="form-control">
                 <label class="radio-inline">
-                    <input type="radio" class="m-2" name="vai_tro" value="0" <?= ($vai_tro == '0') ? 'checked' : ''; ?>>Khách hàng</label>
+                    <input type="radio" class="m-2" name="vai_tro" value="0" <?= ($vai_tro == 0) ? 'checked' : ''; ?>>Khách hàng</label>
                 <label class="radio-inline">
-                    <input type="radio" class="m-2" name="vai_tro" value="1" <?=($vai_tro == '1') ? 'checked' : ''; ?>>Nhân viên</label>
+                    <input type="radio" class="m-2" name="vai_tro" value="1" <?=($vai_tro == 1) ? 'checked' : ''; ?>>Nhân viên</label>
             </div>
         </div>
     </div>

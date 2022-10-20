@@ -27,9 +27,11 @@ if (exist_params("btn_login")) {
             }
         } else {
             $MESSAGE = "Sai mật khẩu!";
+            header("location: dang-nhap-form.php?password_dn=Sai mật khẩu ");
         }
     } else {
-        $MESSAGE = "Sai mã đăng nhập!";
+        $MESSAGE = "Sai email đăng nhập!";
+        header("location: dang-nhap-form.php?email_dn=Sai email đăng nhập");
     }
 } 
 // else if (isset($_SESSION['user'])) {

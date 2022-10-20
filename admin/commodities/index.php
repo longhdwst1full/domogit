@@ -23,7 +23,7 @@ if (exist_params("btn_list")) {
     $date_add = $_POST["date_add"];
     $special = $_POST["special"];
     $image_add= $_FILES["image"];
-    $forder_img = save_file("image","$IMAGE_DIR/products");
+    $forder_img = save_file("image","$IMAGE_DIR/products/");
 
 require "../../content/validate_server_add_hh.php";
 

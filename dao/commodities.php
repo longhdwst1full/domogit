@@ -68,7 +68,7 @@ function commodities_select_by_loai($id)
 }
 function commodities_select_keyword($keywords)
 {
-    $sql = "select hh.*,lo.* from commodities hh join categories lo on lo.id= hh.category_id where lo.name like ? or hh.name like ? ";
+    $sql = "select hh.*,lo.name as loai_name from commodities hh join categories lo on lo.id= hh.category_id where lo.name like ? or hh.name like ? ";
     // echo $sql;
     // die;
     return pdo_query($sql, "%$keywords%", "%$keywords%");

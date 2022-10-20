@@ -7,8 +7,8 @@
         </a>
 
 
-        <form class="d-flex col-6">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex col-6" action="../hang_hoa/liet_ke.php">
+            <input class="form-control me-2" name="keywords" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-light bg-warning text-success " type="submit">Search</button>
         </form>
         <div class="order-lg-2 col-3 nav-btns d-flex justify-content-center">
@@ -16,13 +16,7 @@
                 <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">5</span>
                 <a class="text-light text-decoration-none pl-2" href="<?= $SITE_URL ?>/trang_chinh/index.php?view_cart"> <i class="fa fa-shopping-cart  text-black-50"></i></a>
             </button>
-            <!-- <button type="button" class="btn position-relative">
-                <i class="fa fa-heart"></i>
-                <span class="position-absolute top-0 start-100 translate-middle badge bg-primary">2</span>
-            </button> -->
-            <!-- <button type="button" class="btn position-relative">
-                <i class="fa fa-search"></i>
-            </button> -->
+           
         </div>
 
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
