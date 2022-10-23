@@ -37,13 +37,13 @@ $sum = 0;
                 <?= number_format($each['price']) ?>
             </td>
             <td>
-                <a href="update_quantity_in_cart.php?id=<?= $id ?>&type=decre">
+                <a href="index.php?id=<?= $id ?>&type=decre">
                     -
                 </a>
 
 
                 <?= $each['quantity']; ?>
-                <a href="update_quantity_in_cart.php?id=<?= $id ?>&type=incre">
+                <a href="index.php?id=<?= $id ?>&type=incre">
                     +
                 </a>
             </td>

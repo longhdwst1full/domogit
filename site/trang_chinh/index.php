@@ -25,9 +25,11 @@ if (exist_params("gioi_thieu", $_REQUEST)) {
     $VIEW_NAME = "hoi-dap.php";
 } else if (exist_params("view_cart", $_REQUEST)) {
     $VIEW_NAME = "detail_cart.php";
-} else if (exist_params("id", "type", $_REQUEST)) {
-    $VIEW_NAME = "update_quantity_in_cart.php";
-} else if (exist_params("sigin")) {
+}
+//  else if (exist_params("id", "type", $_REQUEST)) {
+//     // $VIEW_NAME = "update_quantity_in_cart.php";
+// }
+ else if (exist_params("sigin")) {
     require "../../global.php";
     header("Location: ../tai_khoan/dang-nhap-form.php");
     die;
@@ -35,7 +37,28 @@ if (exist_params("gioi_thieu", $_REQUEST)) {
 
     session_unset();
     $VIEW_NAME = "home.php";
-} else if (exist_params('mua_hang')) {
+}
+ else if (exist_params("id","type")) {
+    $id = $_REQUEST['id'];
+    $type = $_REQUEST['type'];
+    
+    
+    if ($type == 'decre') {
+        if ($_SESSION['cart'][$id]['quantity'] > 1) {
+    
+            $_SESSION['cart'][$id]['quantity']--;
+        } else {
+            unset($_SESSION['cart'][$id]);
+        }
+    } else {
+        $_SESSION['cart'][$id]['quantity']++;
+    }
+    $VIEW_NAME ="detail_cart.php";
+    require "../layout.php";
+}
+
+
+else if (exist_params('mua_hang')) {
     if (isset($_SESSION['user'])) {
    
         $VIEW_NAME = "info_dat_hang.php";
